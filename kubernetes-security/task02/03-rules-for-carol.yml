@@ -3,11 +3,11 @@ kind: ClusterRole
 metadata:
   name: carol-pods
 rules:
-- apiGroup:
-    - ""
+- apiGroups:
+  - ""
   resources:
-    - pods
+  - pods
   verbs:
-    - watch
-    - get 
-    - list
+  - watch
+  - get 
+  - list
