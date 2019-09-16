@@ -148,3 +148,62 @@ subjects:
   namespace: dev
 
 ```
+# homework-3
+
+ Выполнено задание без звездочки
+ 
+
+# homework-4
+-  Установлен minio
+-  Установлен service
+[использую документацию](https://medium.com/@karrier_io/minio-s3-compatible-storage-on-kubernetes-74e2cf0902f3)
+### Генерируем пароли для секрета
+```
+date | md5sum
+01f74d26e99c90da3e580e6231ad95b5  
+date | md5sum
+aaaf5501de32857617ebe7f707a0a75e
+```
+
+### Генерируем секреты
+```
+kubectl create secret generic minio-keys --from-literal=access-key=01f74d26e99c90da3e580e6231ad95b5 --from-literal=secret-key=aaaf5501de32857617ebe7f707a0a75e
+```
+- Редактируем statfulset
+
+```
+        env:
+        - name: MINIO_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: minio-keys
+              key: access-key
+        - name: MINIO_SECRET_KEY
+          valueFrom:
+            secretKeyRef:
+              name: minio-keys
+              key: secret-ke
+```
+- Удаляем, запускем с новыми ключами.
+- env 
+```
+HOSTNAME=minio-0
+MINIO_ACCESS_KEY_FILE=access_key
+SHLVL=2
+HOME=/root
+MINIO_ACCESS_KEY=01f74d26e99c90da3e580e6231ad95b5
+MINIO_UPDATE=off
+TERM=xterm
+KUBERNETES_PORT_443_TCP_ADDR=10.96.0.1
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+KUBERNETES_PORT_443_TCP_PORT=443
+KUBERNETES_PORT_443_TCP_PROTO=tcp
+MINIO_SECRET_KEY_FILE=secret_key
+KUBERNETES_SERVICE_PORT_HTTPS=443
+KUBERNETES_PORT_443_TCP=tcp://10.96.0.1:443
+MINIO_SECRET_KEY=aaaf5501de32857617ebe7f707a0a75e
+KUBERNETES_SERVICE_HOST=10.96.0.1
+
+```
+
+
