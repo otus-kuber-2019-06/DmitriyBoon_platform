@@ -7,7 +7,7 @@ spec:
   containers:
   - name: storage-pod
     image: ubuntu:18.04
-    command: ["/bin/sh", "-c", "w"]
+    command: ["/bin/sh", "-c", ""]
     volumeMounts:
       - name: vol
         mountPath: /data 
@@ -15,4 +15,4 @@ spec:
   volumes:
   - name: vol
     persistentVolumeClaim:
-      claimName: hpvc
+      claimName: storage-pvc

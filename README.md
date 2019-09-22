@@ -206,8 +206,11 @@ KUBERNETES_SERVICE_HOST=10.96.0.1
 
 ```
 
-# homework-5 SNI
+# homework-5 CSI
 
 - Выполенено без *
+
 - (Использовал при выполнении)[https://kubernetes.io/blog/2018/10/09/introducing-volume-snapshot-alpha-for-kubernetes/]
 - (example)[https://github.com/kubernetes-csi/external-snapshotter]
+- (установлен CSI)[https://github.com/kubernetes-csi/csi-driver-host-path/tree/master/deploy/kubernetes-1.15]
+
