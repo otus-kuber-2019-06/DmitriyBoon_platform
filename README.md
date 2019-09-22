@@ -206,4 +206,8 @@ KUBERNETES_SERVICE_HOST=10.96.0.1
 
 ```
 
+# homework-5 SNI
 
+- Выполенено без *
+- (Использовал при выполнении)[https://kubernetes.io/blog/2018/10/09/introducing-volume-snapshot-alpha-for-kubernetes/]
+- (example)[https://github.com/kubernetes-csi/external-snapshotter]
