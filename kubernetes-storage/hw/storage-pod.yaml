@@ -7,7 +7,7 @@ spec:
   containers:
   - name: storage-pod
     image: ubuntu:18.04
-    command: ["/bin/sh", "-c", ""]
+    command: ["/bin/sh", "-c", "tail -f /dev/null"]
     volumeMounts:
       - name: vol
         mountPath: /data 
