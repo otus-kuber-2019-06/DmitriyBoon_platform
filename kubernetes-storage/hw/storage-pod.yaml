@@ -6,8 +6,8 @@ spec:
   restartPolicy: Always
   containers:
   - name: storage-pod
-    image: busybox
-    command: ["/bin/sh", "-c", "sleep 30s"]
+    image: ubuntu:18.04
+    command: ["/bin/sh", "-c", "w"]
     volumeMounts:
       - name: vol
         mountPath: /data 
